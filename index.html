@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iliyana Art</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --cream:#F5F2EC;
+  --warm-white:#FAFAF7;
+  --charcoal:#1C1A17;
+  --mid:#6B6560;
+  --gold:#B89A6A;
+  --gold-light:#D4B88A;
+  --serif:'Cormorant Garamond',serif;
+  --sans:'Outfit',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--charcoal);font-family:var(--sans);font-weight:300;overflow-x:hidden}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 4rem;display:flex;justify-content:space-between;align-items:center;background:rgba(245,242,236,0.92);backdrop-filter:blur(8px);border-bottom:0.5px solid rgba(184,154,106,0.2)}
+.nav-logo{font-family:var(--serif);font-size:1.3rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;text-decoration:none;color:var(--charcoal)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--mid);transition:color 0.3s}
+.nav-links a:hover{color:var(--gold)}
+
+section{padding:6rem 4rem}
+
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding-top:8rem;background:var(--warm-white);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-10%;right:-5%;width:60%;height:120%;background:linear-gradient(135deg,rgba(184,154,106,0.06) 0%,rgba(44,31,15,0.04) 100%);border-radius:40% 60% 60% 40%}
+.hero-left{padding:4rem 4rem 4rem 8rem;position:relative;z-index:2}
+.hero-tag{font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:block}
+.hero-title{font-family:var(--serif);font-size:clamp(3.5rem,6vw,5.5rem);font-weight:300;line-height:1.05;margin-bottom:1.5rem;color:var(--charcoal)}
+.hero-title em{font-style:italic;color:var(--gold)}
+.hero-sub{font-size:0.9rem;line-height:1.8;color:var(--mid);max-width:400px;margin-bottom:3rem}
+.hero-actions{display:flex;gap:1.5rem;align-items:center}
+.btn-primary{padding:0.9rem 2.5rem;background:var(--charcoal);color:var(--cream);font-family:var(--sans);font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;transition:all 0.3s;border:none;cursor:pointer;display:inline-block}
+.btn-primary:hover{background:var(--gold)}
+.btn-ghost{font-size:0.75rem;letter-spacing:0.12em;text-transform:uppercase;text-decoration:none;color:var(--charcoal);border-bottom:0.5px solid var(--gold);padding-bottom:2px;transition:color 0.3s}
+.btn-ghost:hover{color:var(--gold)}
+.hero-right{position:relative;height:100vh;overflow:hidden}
+.hero-img-wrapper{position:absolute;inset:0;display:grid;grid-template-rows:60% 40%;grid-template-columns:55% 45%}
+.hero-img-block{overflow:hidden}
+.hero-img-block img{width:100%;height:100%;object-fit:cover;filter:sepia(8%)}
+.hero-img-1{grid-column:1/3;grid-row:1}
+.hero-img-2{grid-column:1;grid-row:2}
+.hero-img-3{grid-column:2;grid-row:2;border-left:3px solid var(--cream)}
+.hero-caption{position:absolute;bottom:3rem;left:2rem;z-index:10}
+.hero-caption span{font-family:var(--serif);font-size:0.85rem;font-style:italic;color:rgba(245,242,236,0.85);letter-spacing:0.05em}
+
+.section-label{font-size:0.68rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:1rem}
+.section-heading{font-family:var(--serif);font-size:clamp(2.5rem,4vw,3.8rem);font-weight:300;line-height:1.1;margin-bottom:1.5rem}
+.divider{width:40px;height:0.5px;background:var(--gold);margin:2rem 0}
+
+.collections{background:var(--cream)}
+.collections-intro{max-width:700px;margin:0 auto 5rem;text-align:center}
+.collections-intro .section-heading{font-size:clamp(2rem,4vw,3.2rem)}
+.collections-intro p{color:var(--mid);line-height:1.8;font-size:0.9rem}
+.collections-intro .divider{margin:2rem auto}
+
+.collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,154,106,0.15)}
+.collection-card{background:var(--warm-white);overflow:hidden;position:relative}
+.collection-card:hover .col-img{transform:scale(1.04)}
+.col-img-wrap{overflow:hidden;aspect-ratio:3/4;position:relative}
+.col-img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;filter:sepia(5%)}
+.col-label{position:absolute;top:1.5rem;left:1.5rem;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;background:var(--cream);color:var(--charcoal);padding:0.3rem 0.8rem}
+.col-body{padding:2rem 2.5rem 3rem}
+.col-title{font-family:var(--serif);font-size:2rem;font-weight:300;margin-bottom:0.8rem}
+.col-desc{font-size:0.82rem;line-height:1.75;color:var(--mid);margin-bottom:1.5rem}
+.col-sizes{display:flex;gap:0.8rem;flex-wrap:wrap}
+.size-tag{font-size:0.68rem;letter-spacing:0.1em;border:0.5px solid rgba(184,154,106,0.5);padding:0.25rem 0.7rem;color:var(--mid)}
+
+.about{background:var(--charcoal);color:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
+.about-img-side{position:relative;min-height:600px;overflow:hidden}
+.about-img-side img{width:100%;height:100%;object-fit:cover;filter:sepia(10%) brightness(0.85)}
+.about-img-overlay{position:absolute;inset:0;background:linear-gradient(to right,transparent 50%,var(--charcoal))}
+.about-text-side{padding:7rem 6rem 7rem 5rem;display:flex;flex-direction:column;justify-content:center}
+.about-text-side .section-label{color:var(--gold-light)}
+.about-text-side .section-heading{color:var(--cream);font-size:clamp(2rem,3.5vw,3rem)}
+.about-divider{width:40px;height:0.5px;background:var(--gold);margin:2rem 0}
+.about-body{font-size:0.88rem;line-height:1.9;color:rgba(245,242,236,0.72);max-width:460px}
+.about-body p{margin-bottom:1.2rem}
+.about-body strong{color:var(--gold-light);font-weight:400}
+
+.commissions{background:var(--warm-white);text-align:center}
+.commissions-inner{max-width:800px;margin:0 auto}
+.commissions .section-heading{font-size:clamp(2rem,4vw,3.2rem)}
+.commissions .divider{margin:2rem auto}
+.commissions-body{font-size:0.88rem;line-height:1.9;color:var(--mid);margin-bottom:3rem}
+.commission-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin:3rem 0}
+.step{padding:2.5rem 2rem;border:0.5px solid rgba(184,154,106,0.3);text-align:left;position:relative}
+.step-num{font-family:var(--serif);font-size:3.5rem;font-weight:300;color:rgba(184,154,106,0.25);position:absolute;top:1rem;right:1.5rem;line-height:1}
+.step-title{font-family:var(--serif);font-size:1.3rem;font-weight:400;margin-bottom:0.8rem}
+.step-desc{font-size:0.8rem;line-height:1.7;color:var(--mid)}
+.certificates{margin-top:2rem;padding-top:2rem;border-top:0.5px solid rgba(184,154,106,0.2);display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
+.cert-item{font-size:0.75rem;letter-spacing:0.1em;color:var(--mid);display:flex;align-items:center;gap:0.5rem}
+.cert-dot{width:4px;height:4px;background:var(--gold);border-radius:50%}
+
+.contact{background:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.contact-left .section-heading{font-size:clamp(2rem,3.5vw,3rem)}
+.contact-info{margin-top:3rem}
+.contact-info-item{margin-bottom:2rem;padding-bottom:2rem;border-bottom:0.5px solid rgba(184,154,106,0.2)}
+.contact-info-item:last-child{border-bottom:none}
+.cinfo-label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;display:block}
+.cinfo-val{font-size:0.88rem;color:var(--charcoal)}
+.cinfo-val a{color:var(--charcoal);text-decoration:none;border-bottom:0.5px solid var(--gold)}
+
+.contact-form{display:flex;flex-direction:column;gap:1.5rem}
+.form-group{display:flex;flex-direction:column;gap:0.5rem}
+.form-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid)}
+.form-input,.form-textarea,.form-select{padding:0.9rem 1rem;background:var(--warm-white);border:0.5px solid rgba(184,154,106,0.4);font-family:var(--sans);font-size:0.85rem;color:var(--charcoal);outline:none;transition:border-color 0.3s;width:100%;appearance:none}
+.form-input:focus,.form-textarea:focus,.form-select:focus{border-color:var(--gold)}
+.form-textarea{resize:vertical;min-height:130px}
+.form-select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23B89A6A'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;cursor:pointer}
+.form-submit{margin-top:0.5rem;padding:1rem 2.5rem;background:var(--charcoal);color:var(--cream);font-family:var(--sans);font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;align-self:flex-start;transition:background 0.3s}
+.form-submit:hover{background:var(--gold)}
+
+footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;display:flex;justify-content:space-between;align-items:center;border-top:0.5px solid rgba(184,154,106,0.15)}
+.footer-logo{font-family:var(--serif);font-size:1.1rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--cream)}
+.footer-links{display:flex;gap:2rem}
+.footer-links a{font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(245,242,236,0.45);text-decoration:none;transition:color 0.3s}
+.footer-links a:hover{color:var(--gold)}
+.footer-copy{font-size:0.72rem;letter-spacing:0.05em}
+
+@media(max-width:900px){
+  nav{padding:1.2rem 2rem}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:7rem 2rem 3rem}
+  .hero-right{height:60vw}
+  section{padding:4rem 2rem}
+  .collection-grid{grid-template-columns:1fr}
+  .about{grid-template-columns:1fr}
+  .about-img-side{min-height:300px}
+  .about-text-side{padding:4rem 2rem}
+  .commission-steps{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr;gap:3rem}
+  footer{flex-direction:column;gap:1.5rem;text-align:center}
+  .footer-links{flex-wrap:wrap;justify-content:center}
+}
+
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#inicio" class="nav-logo">Iliyana Art</a>
+  <ul class="nav-links">
+    <li><a href="#colecciones">Colecciones</a></li>
+    <li><a href="#sobre-mi">Sobre mí</a></li>
+    <li><a href="#encargos">Encargos</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+</nav>
+
+<section class="hero" id="inicio">
+  <div class="hero-left fade-in">
+    <span class="hero-tag">Arte textural abstracto · Jerez de la Frontera</span>
+    <h1 class="hero-title">Entre<br><em>fuego</em><br>y agua</h1>
+    <p class="hero-sub">Obras únicas en acrílico y pasta de textura. Abstracción elemental que transforma cualquier espacio en algo que se siente, no solo se ve.</p>
+    <div class="hero-actions">
+      <a href="#colecciones" class="btn-primary">Ver colecciones</a>
+      <a href="#encargos" class="btn-ghost">Encargar una obra</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-img-wrapper">
+      <div class="hero-img-block hero-img-1">
+        <!-- REEMPLAZA con tu foto real: src="fotos/hero-principal.jpg" -->
+        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&q=80" alt="Arte textural abstracto Fuego">
+      </div>
+      <div class="hero-img-block hero-img-2">
+        <!-- REEMPLAZA con tu foto real: src="fotos/hero-detalle.jpg" -->
+        <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&q=80" alt="Textura acrílica detalle">
+      </div>
+      <div class="hero-img-block hero-img-3">
+        <!-- REEMPLAZA con tu foto real: src="fotos/hero-agua.jpg" -->
+        <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&q=80" alt="Colección Agua">
+      </div>
+    </div>
+    <div class="hero-caption"><span>@iliyana.textured.art</span></div>
+  </div>
+</section>
+
+<section class="collections" id="colecciones">
+  <div class="collections-intro fade-in">
+    <span class="section-label">Colecciones</span>
+    <h2 class="section-heading">Tres fuerzas.<br>Un universo.</h2>
+    <div class="divider"></div>
+    <p>Cada colección nace de un elemento. Cada obra, de una emoción real. Piezas construidas con materia, capas y tiempo — para espacios que buscan presencia, no solo decoración.</p>
+  </div>
+  <div class="collection-grid fade-in">
+    <div class="collection-card">
+      <div class="col-img-wrap">
+        <!-- REEMPLAZA: src="fotos/fuego-principal.jpg" -->
+        <img class="col-img" src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?w=800&q=80" alt="Colección Fuego">
+        <span class="col-label">01</span>
+      </div>
+      <div class="col-body">
+        <h3 class="col-title">Fuego</h3>
+        <p class="col-desc">Del impulso y la transformación. Negro como base, dorado como rastro de vida. Obras intensas que se sienten desde la distancia y revelan su riqueza al acercarse.</p>
+        <div class="col-sizes">
+          <span class="size-tag">80 × 60 cm</span>
+          <span class="size-tag">40 × 30 cm</span>
+        </div>
+      </div>
+    </div>
+    <div class="collection-card">
+      <div class="col-img-wrap">
+        <!-- REEMPLAZA: src="fotos/agua-principal.jpg" -->
+        <img class="col-img" src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800&q=80" alt="Colección Agua">
+        <span class="col-label">02</span>
+      </div>
+      <div class="col-body">
+        <h3 class="col-title">Agua</h3>
+        <p class="col-desc">De la calma, el fluir y la profundidad emocional. Azules, turquesas y acentos dorados. En ocasiones, arena natural recogida de una playa concreta.</p>
+        <div class="col-sizes">
+          <span class="size-tag">70 × 100 cm</span>
+          <span class="size-tag">40 × 40 cm</span>
+        </div>
+      </div>
+    </div>
+    <div class="collection-card">
+      <div class="col-img-wrap">
+        <!-- REEMPLAZA: src="fotos/tierra-principal.jpg" -->
+        <img class="col-img" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80" alt="Colección Tierra">
+        <span class="col-label">03</span>
+      </div>
+      <div class="col-body">
+        <h3 class="col-title">Tierra</h3>
+        <p class="col-desc">De la conexión con lo esencial y el paso del tiempo. Marrones, ocres y beige construyen arraigo. Obras para espacios que buscan calidez y presencia silenciosa.</p>
+        <div class="col-sizes">
+          <span class="size-tag">90 × 60 cm</span>
+          <span class="size-tag">50 × 40 cm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="sobre-mi">
+  <div class="about-img-side">
+    <!-- REEMPLAZA: src="fotos/iliyana-estudio.jpg" — usa una foto tuya creando -->
+    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&q=80" alt="Iliyana creando en su estudio">
+    <div class="about-img-overlay"></div>
+  </div>
+  <div class="about-text-side fade-in">
+    <span class="section-label">Sobre mí</span>
+    <h2 class="section-heading" style="color:var(--cream)">El arte<br>no desapareció.<br><em>Esperó.</em></h2>
+    <div class="about-divider"></div>
+    <div class="about-body">
+      <p>El arte ha estado conmigo toda la vida. Desde niña, crear fue mi forma natural de entender el mundo.</p>
+      <p>Con los años, la vida me llevó por otros caminos: una carrera exigente, distintos países, responsabilidades, decisiones. Me convertí en mujer, en profesional, en madre.</p>
+      <p>Volví al arte durante mi segundo embarazo. Y fue aquí, en <strong>Jerez y Andalucía</strong>, donde esa vuelta tomó forma de verdad — donde encontré el equilibrio entre fuego y agua.</p>
+      <p>Trabajo con materia y textura porque necesito tocar, construir, romper y volver a crear. <strong>Cada obra nace de una emoción vivida, de un momento real.</strong></p>
+      <p>Hoy, crear es volver a casa.</p>
+    </div>
+    <div style="margin-top:2.5rem">
+      <a href="#contacto" class="btn-ghost" style="color:var(--cream);border-bottom-color:var(--gold)">Escribirme</a>
+    </div>
+  </div>
+</section>
+
+<section class="commissions" id="encargos">
+  <div class="commissions-inner fade-in">
+    <span class="section-label">Encargos</span>
+    <h2 class="section-heading">Una obra<br>hecha para ti</h2>
+    <div class="divider"></div>
+    <p class="commissions-body">Puedes elegir una obra existente y adaptarla a tu espacio, o crear conmigo una pieza totalmente nueva. Cada encargo nace desde la conversación: el lugar donde irá, la luz, el tamaño, la energía que buscas.</p>
+    <div class="commission-steps">
+      <div class="step">
+        <span class="step-num">01</span>
+        <h4 class="step-title">Conversamos</h4>
+        <p class="step-desc">Me cuentas el espacio, la energía que buscas, el tamaño. A partir de ahí, propongo una dirección creativa.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">02</span>
+        <h4 class="step-title">Creo</h4>
+        <p class="step-desc">Trabajo la materia y la textura de forma intuitiva, escuchando el proceso. Te comparto el avance si lo deseas.</p>
+      </div>
+      <div class="step">
+        <span class="step-num">03</span>
+        <h4 class="step-title">Entrego</h4>
+        <p class="step-desc">Lista para colgar, firmada, fechada y con su certificado de autenticidad. Una obra única, hecha específicamente para ti.</p>
+      </div>
+    </div>
+    <div class="certificates">
+      <div class="cert-item"><div class="cert-dot"></div>Realizada a mano</div>
+      <div class="cert-item"><div class="cert-dot"></div>Firmada y fechada</div>
+      <div class="cert-item"><div class="cert-dot"></div>Lista para colgar</div>
+      <div class="cert-item"><div class="cert-dot"></div>Certificado de autenticidad</div>
+    </div>
+    <div style="margin-top:3rem">
+      <a href="#contacto" class="btn-primary">Solicitar encargo</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="contact-left fade-in">
+    <span class="section-label">Contacto</span>
+    <h2 class="section-heading">Hablemos<br>de tu espacio</h2>
+    <div class="divider"></div>
+    <div class="contact-info">
+      <div class="contact-info-item">
+        <span class="cinfo-label">Instagram</span>
+        <span class="cinfo-val"><a href="https://instagram.com/iliyana.textured.art" target="_blank">@iliyana.textured.art</a></span>
+      </div>
+      <div class="contact-info-item">
+        <span class="cinfo-label">Email</span>
+        <span class="cinfo-val"><a href="mailto:iliyana.textured.art@gmail.com">iliyana.textured.art@gmail.com</a></span>
+      </div>
+      <div class="contact-info-item">
+        <span class="cinfo-label">Ubicación</span>
+        <span class="cinfo-val">Jerez de la Frontera, Andalucía</span>
+      </div>
+      <div class="contact-info-item">
+        <span class="cinfo-label">Envíos</span>
+        <span class="cinfo-val">España y Europa</span>
+      </div>
+    </div>
+  </div>
+  <div class="contact-right fade-in">
+    <!--
+      FORMULARIO DE CONTACTO
+      Para que funcione de verdad, usa Formspree (gratis):
+      1. Ve a formspree.io y crea una cuenta
+      2. Crea un nuevo formulario, te darán un action URL tipo: https://formspree.io/f/xxxxxxxx
+      3. Sustituye el action="" de abajo con ese URL
+    -->
+    <form class="contact-form" action="" method="POST">
+      <div class="form-group">
+        <label class="form-label">Tu nombre</label>
+        <input type="text" name="nombre" class="form-input" placeholder="María García" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" name="email" class="form-input" placeholder="maria@email.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Me interesa</label>
+        <select name="interes" class="form-select">
+          <option value="">Selecciona una opción</option>
+          <option>Una obra de la colección Fuego</option>
+          <option>Una obra de la colección Agua</option>
+          <option>Una obra de la colección Tierra</option>
+          <option>Un encargo personalizado</option>
+          <option>Ver el portafolio completo</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Mensaje</label>
+        <textarea name="mensaje" class="form-textarea" placeholder="Cuéntame sobre tu espacio, qué buscas sentir con la obra..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Enviar mensaje</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <span class="footer-logo">Iliyana Art</span>
+  <div class="footer-links">
+    <a href="#colecciones">Colecciones</a>
+    <a href="#sobre-mi">Sobre mí</a>
+    <a href="#encargos">Encargos</a>
+    <a href="https://instagram.com/iliyana.textured.art" target="_blank">Instagram</a>
+  </div>
+  <span class="footer-copy">© 2025 Iliyana Art · Arte textural abstracto</span>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') });
+}, { threshold: 0.15 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
