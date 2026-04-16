@@ -60,10 +60,10 @@ section{padding:6rem 4rem}
 .collections-intro p{color:var(--mid);line-height:1.8;font-size:0.9rem}
 .collections-intro .divider{margin:2rem auto}
 
-.collection-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(184,154,106,0.15)}
+.collection-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(184,154,106,0.15)}
 .collection-card{background:var(--warm-white);overflow:hidden;position:relative}
 .collection-card:hover .col-img{transform:scale(1.04)}
-.col-img-wrap{overflow:hidden;aspect-ratio:3/4;position:relative}
+.col-img-wrap{overflow:hidden;aspect-ratio:4/3;position:relative}
 .col-img{width:100%;height:100%;object-fit:cover;transition:transform 0.7s ease;filter:sepia(5%)}
 .col-label{position:absolute;top:1.5rem;left:1.5rem;font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;background:var(--cream);color:var(--charcoal);padding:0.3rem 0.8rem}
 .col-body{padding:2rem 2.5rem 3rem}
@@ -170,15 +170,15 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
   <div class="hero-right">
     <div class="hero-img-wrapper">
       <div class="hero-img-block hero-img-1">
-        <!-- REEMPLAZA con tu foto real: src="fotos/hero-principal.jpg" -->
+        <!-- REEMPLAZA con tu foto real: src="fuego-principal.jpg" -->
         <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&q=80" alt="Arte textural abstracto Fuego">
       </div>
       <div class="hero-img-block hero-img-2">
-        <!-- REEMPLAZA con tu foto real: src="fotos/hero-detalle.jpg" -->
+        <!-- REEMPLAZA con tu foto real: src="agua-principal.jpg" -->
         <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&q=80" alt="Textura acrílica detalle">
       </div>
       <div class="hero-img-block hero-img-3">
-        <!-- REEMPLAZA con tu foto real: src="fotos/hero-agua.jpg" -->
+        <!-- REEMPLAZA con tu foto real: src="tierra-detalle.jpg" -->
         <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&q=80" alt="Colección Agua">
       </div>
     </div>
@@ -189,62 +189,82 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
 <section class="collections" id="colecciones">
   <div class="collections-intro fade-in">
     <span class="section-label">Colecciones</span>
-    <h2 class="section-heading">Tres fuerzas.<br>Un universo.</h2>
+    <h2 class="section-heading">Cuatro fuerzas.<br>Un universo.</h2>
     <div class="divider"></div>
     <p>Cada colección nace de un elemento. Cada obra, de una emoción real. Piezas construidas con materia, capas y tiempo — para espacios que buscan presencia, no solo decoración.</p>
   </div>
   <div class="collection-grid fade-in">
+
     <div class="collection-card">
       <div class="col-img-wrap">
-        <!-- REEMPLAZA: src="fotos/fuego-principal.jpg" -->
+        <!-- REEMPLAZA: src="fuego-principal.jpg" -->
         <img class="col-img" src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?w=800&q=80" alt="Colección Fuego">
         <span class="col-label">01</span>
       </div>
       <div class="col-body">
         <h3 class="col-title">Fuego</h3>
-        <p class="col-desc">Del impulso y la transformación. Negro como base, dorado como rastro de vida. Obras intensas que se sienten desde la distancia y revelan su riqueza al acercarse.</p>
+        <p class="col-desc">Del impulso, el movimiento constante y la transformación. Negro como base y contención; dorado como rastro de luz, de cambio, de vida en movimiento. Obras intensas que se sienten desde la distancia y revelan su riqueza en los detalles al acercarse.</p>
         <div class="col-sizes">
           <span class="size-tag">80 × 60 cm</span>
           <span class="size-tag">40 × 30 cm</span>
         </div>
       </div>
     </div>
+
     <div class="collection-card">
       <div class="col-img-wrap">
-        <!-- REEMPLAZA: src="fotos/agua-principal.jpg" -->
+        <!-- REEMPLAZA: src="agua-principal.jpg" -->
         <img class="col-img" src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800&q=80" alt="Colección Agua">
         <span class="col-label">02</span>
       </div>
       <div class="col-body">
         <h3 class="col-title">Agua</h3>
-        <p class="col-desc">De la calma, el fluir y la profundidad emocional. Azules, turquesas y acentos dorados. En ocasiones, arena natural recogida de una playa concreta.</p>
+        <p class="col-desc">De la calma, el fluir y la profundidad emocional. Azules, turquesas y tonos claros con sutiles acentos dorados. En ocasiones, arena natural recogida de una playa concreta, creando una conexión directa con el lugar. Obras que invitan a parar y dejarse llevar.</p>
         <div class="col-sizes">
           <span class="size-tag">70 × 100 cm</span>
           <span class="size-tag">40 × 40 cm</span>
         </div>
       </div>
     </div>
+
     <div class="collection-card">
       <div class="col-img-wrap">
-        <!-- REEMPLAZA: src="fotos/tierra-principal.jpg" -->
+        <!-- REEMPLAZA: src="tierra-principal.jpg" -->
         <img class="col-img" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80" alt="Colección Tierra">
         <span class="col-label">03</span>
       </div>
       <div class="col-body">
         <h3 class="col-title">Tierra</h3>
-        <p class="col-desc">De la conexión con lo esencial y el paso del tiempo. Marrones, ocres y beige construyen arraigo. Obras para espacios que buscan calidez y presencia silenciosa.</p>
+        <p class="col-desc">De la conexión con lo esencial, lo orgánico y el paso del tiempo. Marrones, ocres y beige que dialogan entre sí, creando ritmo, profundidad y calma. Obras para espacios que buscan calidez y una presencia silenciosa que acompaña.</p>
         <div class="col-sizes">
           <span class="size-tag">90 × 60 cm</span>
           <span class="size-tag">50 × 40 cm</span>
         </div>
       </div>
     </div>
+
+    <div class="collection-card">
+      <div class="col-img-wrap">
+        <!-- REEMPLAZA: src="desierto-principal.jpg" -->
+        <img class="col-img" src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80" alt="Colección Desierto">
+        <span class="col-label">04</span>
+      </div>
+      <div class="col-body">
+        <h3 class="col-title">Desierto</h3>
+        <p class="col-desc">Del silencio, la amplitud y la fuerza contenida. Superficies secas, erosionadas y densas, como paisajes marcados por el sol y el paso del tiempo. Tonos arena, tierra y ocre superpuestos de forma orgánica. Obras que sostienen el espacio desde la serenidad.</p>
+        <div class="col-sizes">
+          <span class="size-tag">50 × 40 cm</span>
+          <span class="size-tag">50 × 50 cm</span>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
 <section class="about" id="sobre-mi">
   <div class="about-img-side">
-    <!-- REEMPLAZA: src="fotos/iliyana-estudio.jpg" — usa una foto tuya creando -->
+    <!-- REEMPLAZA: src="iliyana-estudio.jpg" — usa una foto tuya creando -->
     <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&q=80" alt="Iliyana creando en su estudio">
     <div class="about-img-overlay"></div>
   </div>
@@ -254,9 +274,9 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
     <div class="about-divider"></div>
     <div class="about-body">
       <p>El arte ha estado conmigo toda la vida. Desde niña, crear fue mi forma natural de entender el mundo.</p>
-      <p>Con los años, la vida me llevó por otros caminos: una carrera exigente, distintos países, responsabilidades, decisiones. Me convertí en mujer, en profesional, en madre.</p>
-      <p>Volví al arte durante mi segundo embarazo. Y fue aquí, en <strong>Jerez y Andalucía</strong>, donde esa vuelta tomó forma de verdad — donde encontré el equilibrio entre fuego y agua.</p>
-      <p>Trabajo con materia y textura porque necesito tocar, construir, romper y volver a crear. <strong>Cada obra nace de una emoción vivida, de un momento real.</strong></p>
+      <p>Con los años, la vida me llevó por otros caminos: una carrera exigente, distintos países, responsabilidades, decisiones. Me convertí en mujer, en profesional, en madre. Y durante un tiempo, el arte quedó en silencio. No desapareció. Esperó.</p>
+      <p>Volví a él durante mi segundo embarazo. Y fue aquí, en <strong>Jerez y Andalucía</strong>, donde esa vuelta tomó forma de verdad — donde encontré el equilibrio entre dos fuerzas que hoy atraviesan todo mi trabajo: el fuego y el agua.</p>
+      <p>Trabajo con materia y textura porque necesito tocar, construir, romper y volver a crear. <strong>Cada obra nace de una emoción vivida, de un momento real.</strong> No sigo reglas fijas: escucho el proceso y el espacio al que la obra está destinada.</p>
       <p>Hoy, crear es volver a casa.</p>
     </div>
     <div style="margin-top:2.5rem">
@@ -270,7 +290,7 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
     <span class="section-label">Encargos</span>
     <h2 class="section-heading">Una obra<br>hecha para ti</h2>
     <div class="divider"></div>
-    <p class="commissions-body">Puedes elegir una obra existente y adaptarla a tu espacio, o crear conmigo una pieza totalmente nueva. Cada encargo nace desde la conversación: el lugar donde irá, la luz, el tamaño, la energía que buscas.</p>
+    <p class="commissions-body">Puedes elegir una obra existente y adaptarla a tu espacio, o crear conmigo una pieza totalmente nueva, inspirada en mis colecciones y en lo que tú quieras sentir al vivir con ella. Cada encargo nace desde la conversación: el lugar donde irá, la luz, el tamaño, la energía que buscas.</p>
     <div class="commission-steps">
       <div class="step">
         <span class="step-num">01</span>
@@ -329,7 +349,7 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
       FORMULARIO DE CONTACTO
       Para que funcione de verdad, usa Formspree (gratis):
       1. Ve a formspree.io y crea una cuenta
-      2. Crea un nuevo formulario, te darán un action URL tipo: https://formspree.io/f/xxxxxxxx
+      2. Crea un nuevo formulario — te darán un action URL tipo: https://formspree.io/f/xxxxxxxx
       3. Sustituye el action="" de abajo con ese URL
     -->
     <form class="contact-form" action="" method="POST">
@@ -348,6 +368,7 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
           <option>Una obra de la colección Fuego</option>
           <option>Una obra de la colección Agua</option>
           <option>Una obra de la colección Tierra</option>
+          <option>Una obra de la colección Desierto</option>
           <option>Un encargo personalizado</option>
           <option>Ver el portafolio completo</option>
         </select>
