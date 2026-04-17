@@ -59,7 +59,6 @@ section{padding:6rem 4rem}
 .collections-intro .section-heading{font-size:clamp(2rem,4vw,3.2rem)}
 .collections-intro p{color:var(--mid);line-height:1.8;font-size:0.9rem}
 .collections-intro .divider{margin:2rem auto}
-
 .collection-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:rgba(184,154,106,0.15)}
 .collection-card{background:var(--warm-white);overflow:hidden;position:relative}
 .collection-card:hover .col-img{transform:scale(1.04)}
@@ -72,6 +71,64 @@ section{padding:6rem 4rem}
 .col-sizes{display:flex;gap:0.8rem;flex-wrap:wrap}
 .size-tag{font-size:0.68rem;letter-spacing:0.1em;border:0.5px solid rgba(184,154,106,0.5);padding:0.25rem 0.7rem;color:var(--mid)}
 
+/* GALLERY */
+.gallery{background:var(--charcoal);padding:6rem 4rem}
+.gallery-intro{max-width:700px;margin:0 auto 4rem;text-align:center}
+.gallery-intro .section-label{color:var(--gold-light)}
+.gallery-intro .section-heading{color:var(--cream);font-size:clamp(2rem,4vw,3.2rem)}
+.gallery-intro p{color:rgba(245,242,236,0.6);font-size:0.88rem;line-height:1.8}
+.gallery-intro .divider{margin:2rem auto;background:var(--gold)}
+
+.gallery-filters{display:flex;gap:1rem;justify-content:center;margin-bottom:3rem;flex-wrap:wrap}
+.filter-btn{font-family:var(--sans);font-size:0.7rem;letter-spacing:0.14em;text-transform:uppercase;padding:0.5rem 1.4rem;border:0.5px solid rgba(184,154,106,0.35);background:transparent;color:rgba(245,242,236,0.5);cursor:pointer;transition:all 0.3s}
+.filter-btn:hover,.filter-btn.active{border-color:var(--gold);color:var(--gold)}
+
+.gallery-masonry{columns:3;gap:12px}
+.gallery-item{break-inside:avoid;margin-bottom:12px;overflow:hidden;position:relative;cursor:pointer}
+.gallery-item img{width:100%;display:block;filter:sepia(5%) brightness(0.95);transition:transform 0.6s ease,filter 0.4s ease}
+.gallery-item:hover img{transform:scale(1.04);filter:sepia(0%) brightness(1)}
+.gallery-item-overlay{position:absolute;inset:0;background:rgba(28,26,23,0);transition:background 0.4s ease;display:flex;align-items:flex-end;padding:1.5rem}
+.gallery-item:hover .gallery-item-overlay{background:rgba(28,26,23,0.45)}
+.gallery-item-info{opacity:0;transform:translateY(8px);transition:all 0.3s ease}
+.gallery-item:hover .gallery-item-info{opacity:1;transform:translateY(0)}
+.gallery-item-info span{font-family:var(--serif);font-size:0.9rem;font-style:italic;color:var(--cream);display:block}
+.gallery-item-info small{font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light)}
+
+/* LIGHTBOX */
+.lightbox{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,9,8,0.95);align-items:center;justify-content:center;padding:2rem}
+.lightbox.open{display:flex}
+.lightbox-img{max-height:90vh;max-width:90vw;object-fit:contain}
+.lightbox-close{position:absolute;top:2rem;right:2rem;font-size:1.5rem;color:var(--gold);background:none;border:none;cursor:pointer;font-family:var(--serif);line-height:1;padding:0.5rem}
+.lightbox-prev,.lightbox-next{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0.5px solid rgba(184,154,106,0.4);color:var(--gold);font-size:1.2rem;padding:0.8rem 1.1rem;cursor:pointer;transition:border-color 0.3s;font-family:var(--serif)}
+.lightbox-prev{left:2rem}
+.lightbox-next{right:2rem}
+.lightbox-prev:hover,.lightbox-next:hover{border-color:var(--gold)}
+.lightbox-caption{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);text-align:center}
+.lightbox-caption span{font-family:var(--serif);font-size:1rem;font-style:italic;color:var(--cream)}
+.lightbox-caption small{display:block;font-size:0.65rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-light);margin-top:0.3rem}
+
+/* INSTAGRAM */
+.instagram{background:var(--warm-white);text-align:center}
+.instagram-intro{max-width:600px;margin:0 auto 3.5rem}
+.instagram-intro .section-heading{font-size:clamp(1.8rem,3.5vw,2.8rem)}
+.instagram-intro p{color:var(--mid);font-size:0.88rem;line-height:1.8;margin-top:1rem}
+.instagram-intro .divider{margin:2rem auto}
+.instagram-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;max-width:900px;margin:0 auto 3rem}
+.ig-item{aspect-ratio:1;overflow:hidden;position:relative;cursor:pointer}
+.ig-item img{width:100%;height:100%;object-fit:cover;filter:sepia(5%);transition:transform 0.5s ease,filter 0.4s ease}
+.ig-item:hover img{transform:scale(1.06);filter:sepia(0%)}
+.ig-item-overlay{position:absolute;inset:0;background:rgba(28,26,23,0);display:flex;align-items:center;justify-content:center;transition:background 0.3s}
+.ig-item:hover .ig-item-overlay{background:rgba(28,26,23,0.4)}
+.ig-icon{opacity:0;transition:opacity 0.3s}
+.ig-item:hover .ig-icon{opacity:1}
+.ig-icon svg{width:28px;height:28px;fill:var(--cream)}
+.ig-handle{display:inline-flex;align-items:center;gap:0.7rem;margin-bottom:2rem;font-size:0.82rem;letter-spacing:0.1em;color:var(--mid)}
+.ig-handle svg{width:18px;height:18px;fill:var(--mid)}
+.ig-follow-btn{display:inline-flex;align-items:center;gap:0.8rem;padding:1rem 2.8rem;background:var(--charcoal);color:var(--cream);font-family:var(--sans);font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;text-decoration:none;transition:background 0.3s}
+.ig-follow-btn:hover{background:var(--gold)}
+.ig-follow-btn svg{width:16px;height:16px;fill:var(--cream)}
+
+/* ABOUT */
 .about{background:var(--charcoal);color:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:0;padding:0}
 .about-img-side{position:relative;min-height:600px;overflow:hidden}
 .about-img-side img{width:100%;height:100%;object-fit:cover;filter:sepia(10%) brightness(0.85)}
@@ -84,6 +141,7 @@ section{padding:6rem 4rem}
 .about-body p{margin-bottom:1.2rem}
 .about-body strong{color:var(--gold-light);font-weight:400}
 
+/* COMMISSIONS */
 .commissions{background:var(--warm-white);text-align:center}
 .commissions-inner{max-width:800px;margin:0 auto}
 .commissions .section-heading{font-size:clamp(2rem,4vw,3.2rem)}
@@ -98,6 +156,7 @@ section{padding:6rem 4rem}
 .cert-item{font-size:0.75rem;letter-spacing:0.1em;color:var(--mid);display:flex;align-items:center;gap:0.5rem}
 .cert-dot{width:4px;height:4px;background:var(--gold);border-radius:50%}
 
+/* CONTACT */
 .contact{background:var(--cream);display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
 .contact-left .section-heading{font-size:clamp(2rem,3.5vw,3rem)}
 .contact-info{margin-top:3rem}
@@ -106,7 +165,6 @@ section{padding:6rem 4rem}
 .cinfo-label{font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--gold);margin-bottom:0.4rem;display:block}
 .cinfo-val{font-size:0.88rem;color:var(--charcoal)}
 .cinfo-val a{color:var(--charcoal);text-decoration:none;border-bottom:0.5px solid var(--gold)}
-
 .contact-form{display:flex;flex-direction:column;gap:1.5rem}
 .form-group{display:flex;flex-direction:column;gap:0.5rem}
 .form-label{font-size:0.68rem;letter-spacing:0.14em;text-transform:uppercase;color:var(--mid)}
@@ -124,6 +182,9 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
 .footer-links a:hover{color:var(--gold)}
 .footer-copy{font-size:0.72rem;letter-spacing:0.05em}
 
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease,transform 0.8s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
 @media(max-width:900px){
   nav{padding:1.2rem 2rem}
   .nav-links{display:none}
@@ -132,6 +193,8 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
   .hero-right{height:60vw}
   section{padding:4rem 2rem}
   .collection-grid{grid-template-columns:1fr}
+  .gallery-masonry{columns:2}
+  .instagram-grid{grid-template-columns:repeat(3,1fr)}
   .about{grid-template-columns:1fr}
   .about-img-side{min-height:300px}
   .about-text-side{padding:4rem 2rem}
@@ -139,10 +202,13 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
   .contact{grid-template-columns:1fr;gap:3rem}
   footer{flex-direction:column;gap:1.5rem;text-align:center}
   .footer-links{flex-wrap:wrap;justify-content:center}
+  .lightbox-prev{left:0.5rem}
+  .lightbox-next{right:0.5rem}
 }
-
-.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease,transform 0.8s ease}
-.fade-in.visible{opacity:1;transform:translateY(0)}
+@media(max-width:600px){
+  .gallery-masonry{columns:1}
+  .instagram-grid{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
 <body>
@@ -151,12 +217,14 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
   <a href="#inicio" class="nav-logo">Iliyana Art</a>
   <ul class="nav-links">
     <li><a href="#colecciones">Colecciones</a></li>
+    <li><a href="#galeria">Galería</a></li>
     <li><a href="#sobre-mi">Sobre mí</a></li>
     <li><a href="#encargos">Encargos</a></li>
     <li><a href="#contacto">Contacto</a></li>
   </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="inicio">
   <div class="hero-left fade-in">
     <span class="hero-tag">Arte textural abstracto · Jerez de la Frontera</span>
@@ -170,15 +238,15 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
   <div class="hero-right">
     <div class="hero-img-wrapper">
       <div class="hero-img-block hero-img-1">
-        <!-- REEMPLAZA con tu foto real: src="fuego-principal.jpg" -->
-        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&q=80" alt="Arte textural abstracto Fuego">
+        <!-- REEMPLAZA: src="hero-1.jpg" -->
+        <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&q=80" alt="Arte textural abstracto">
       </div>
       <div class="hero-img-block hero-img-2">
-        <!-- REEMPLAZA con tu foto real: src="agua-principal.jpg" -->
+        <!-- REEMPLAZA: src="hero-2.jpg" -->
         <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=600&q=80" alt="Textura acrílica detalle">
       </div>
       <div class="hero-img-block hero-img-3">
-        <!-- REEMPLAZA con tu foto real: src="tierra-detalle.jpg" -->
+        <!-- REEMPLAZA: src="hero-3.jpg" -->
         <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=600&q=80" alt="Colección Agua">
       </div>
     </div>
@@ -186,6 +254,7 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
   </div>
 </section>
 
+<!-- COLECCIONES -->
 <section class="collections" id="colecciones">
   <div class="collections-intro fade-in">
     <span class="section-label">Colecciones</span>
@@ -194,67 +263,203 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
     <p>Cada colección nace de un elemento. Cada obra, de una emoción real. Piezas construidas con materia, capas y tiempo — para espacios que buscan presencia, no solo decoración.</p>
   </div>
   <div class="collection-grid fade-in">
-
     <div class="collection-card">
       <div class="col-img-wrap">
-        <!-- REEMPLAZA: src="fuego-principal.jpg" -->
+        <!-- REEMPLAZA: src="fuego-portada.jpg" -->
         <img class="col-img" src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?w=800&q=80" alt="Colección Fuego">
         <span class="col-label">01</span>
       </div>
       <div class="col-body">
         <h3 class="col-title">Fuego</h3>
-        <p class="col-desc">Del impulso, el movimiento constante y la transformación. Negro como base y contención; dorado como rastro de luz, de cambio, de vida en movimiento. Obras intensas que se sienten desde la distancia y revelan su riqueza en los detalles al acercarse.</p>
-        <div class="col-sizes">
-          <span class="size-tag">80 × 60 cm</span>
-          <span class="size-tag">40 × 30 cm</span>
-        </div>
+        <p class="col-desc">Del impulso, el movimiento constante y la transformación. Negro como base y contención; dorado como rastro de luz, de cambio, de vida en movimiento. Obras intensas que se sienten desde la distancia y revelan su riqueza al acercarse.</p>
+        
       </div>
     </div>
-
     <div class="collection-card">
       <div class="col-img-wrap">
-        <!-- REEMPLAZA: src="agua-principal.jpg" -->
+        <!-- REEMPLAZA: src="agua-portada.jpg" -->
         <img class="col-img" src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800&q=80" alt="Colección Agua">
         <span class="col-label">02</span>
       </div>
       <div class="col-body">
         <h3 class="col-title">Agua</h3>
-        <p class="col-desc">De la calma, el fluir y la profundidad emocional. Azules, turquesas y tonos claros con sutiles acentos dorados. En ocasiones, arena natural recogida de una playa concreta, creando una conexión directa con el lugar. Obras que invitan a parar y dejarse llevar.</p>
-        <div class="col-sizes">
-          <span class="size-tag">70 × 100 cm</span>
-          <span class="size-tag">40 × 40 cm</span>
-        </div>
+        <p class="col-desc">De la calma, el fluir y la profundidad emocional. Azules, turquesas y tonos claros con sutiles acentos dorados. En ocasiones, arena natural recogida de una playa concreta, creando una conexión directa con el lugar.</p>
+        
       </div>
     </div>
-
     <div class="collection-card">
       <div class="col-img-wrap">
-        <!-- REEMPLAZA: src="tierra-principal.jpg" -->
+        <!-- REEMPLAZA: src="tierra-portada.jpg" -->
         <img class="col-img" src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80" alt="Colección Tierra">
         <span class="col-label">03</span>
       </div>
       <div class="col-body">
         <h3 class="col-title">Tierra</h3>
-        <p class="col-desc">De la conexión con lo esencial, lo orgánico y el paso del tiempo. Marrones, ocres y beige que dialogan entre sí, creando ritmo, profundidad y calma. Obras para espacios que buscan calidez y una presencia silenciosa que acompaña.</p>
-        <div class="col-sizes">
-          <span class="size-tag">90 × 60 cm</span>
-          <span class="size-tag">50 × 40 cm</span>
-        </div>
+        <p class="col-desc">De la conexión con lo esencial, lo orgánico y el paso del tiempo. Marrones, ocres y beige que dialogan entre sí, creando ritmo, profundidad y calma. Obras para espacios que buscan calidez y presencia silenciosa.</p>
+        
       </div>
     </div>
-
     <div class="collection-card">
       <div class="col-img-wrap">
-        <!-- REEMPLAZA: src="desierto-principal.jpg" -->
+        <!-- REEMPLAZA: src="desierto-portada.jpg" -->
         <img class="col-img" src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80" alt="Colección Desierto">
         <span class="col-label">04</span>
       </div>
       <div class="col-body">
         <h3 class="col-title">Desierto</h3>
-        <p class="col-desc">Del silencio, la amplitud y la fuerza contenida. Superficies secas, erosionadas y densas, como paisajes marcados por el sol y el paso del tiempo. Tonos arena, tierra y ocre superpuestos de forma orgánica. Obras que sostienen el espacio desde la serenidad.</p>
-        <div class="col-sizes">
-          <span class="size-tag">50 × 40 cm</span>
-          <span class="size-tag">50 × 50 cm</span>
+        <p class="col-desc">Del silencio, la amplitud y la fuerza contenida. Superficies secas, erosionadas y densas como paisajes marcados por el sol. Tonos arena, tierra y ocre superpuestos de forma orgánica. Obras que sostienen el espacio desde la serenidad.</p>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALERÍA -->
+<section class="gallery" id="galeria">
+  <div class="gallery-intro fade-in">
+    <span class="section-label">Galería</span>
+    <h2 class="section-heading" style="color:var(--cream)">Cada pieza,<br>una <em>historia</em>.</h2>
+    <div class="divider"></div>
+    <p>Una selección de obras disponibles y vendidas. Haz clic en cualquier imagen para verla en detalle.</p>
+  </div>
+
+  <div class="gallery-filters fade-in">
+    <button class="filter-btn active" onclick="filterGallery('fuego',this)">Fuego</button>
+    <button class="filter-btn" onclick="filterGallery('agua',this)">Agua</button>
+    <button class="filter-btn" onclick="filterGallery('tierra',this)">Tierra</button>
+    <button class="filter-btn" onclick="filterGallery('desierto',this)">Desierto</button>
+  </div>
+
+  <div class="gallery-masonry fade-in" id="galleryGrid">
+
+    <!-- FUEGO 1 -->
+    <!-- REEMPLAZA: src="fuego-1.jpg" | título y tamaño en data-title y data-size -->
+    <div class="gallery-item" data-col="fuego" onclick="openLightbox(0)">
+      <img src="https://images.unsplash.com/photo-1617791160536-598cf32026fb?w=800&q=80" alt="Fuego I" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-info">
+          <span>Fuego I</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGUA 1 -->
+    <!-- REEMPLAZA: src="agua-1.jpg" -->
+    <div class="gallery-item" data-col="agua" onclick="openLightbox(1)">
+      <img src="https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=800&q=80" alt="Agua I" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-info">
+          <span>Agua I</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIERRA 1 -->
+    <!-- REEMPLAZA: src="tierra-1.jpg" -->
+    <div class="gallery-item" data-col="tierra" onclick="openLightbox(2)">
+      <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=800&q=80" alt="Tierra I" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-info">
+          <span>Tierra I</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESIERTO 1 -->
+    <!-- REEMPLAZA: src="desierto-1.jpg" -->
+    <div class="gallery-item" data-col="desierto" onclick="openLightbox(3)">
+      <img src="https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80" alt="Desierto I" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-info">
+          <span>Desierto I</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUEGO 2 -->
+    <!-- REEMPLAZA: src="fuego-2.jpg" -->
+    <div class="gallery-item" data-col="fuego" onclick="openLightbox(4)">
+      <img src="https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=800&q=80" alt="Fuego II" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-info">
+          <span>Fuego II</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGUA 2 -->
+    <!-- REEMPLAZA: src="agua-2.jpg" -->
+    <div class="gallery-item" data-col="agua" onclick="openLightbox(5)">
+      <img src="https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=800&q=80" alt="Agua II" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-info">
+          <span>Agua II</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIERRA 2 -->
+    <!-- REEMPLAZA: src="tierra-2.jpg" -->
+    <div class="gallery-item" data-col="tierra" onclick="openLightbox(6)">
+      <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=800&q=80" alt="Tierra II" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-info">
+          <span>Tierra II</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESIERTO 2 -->
+    <!-- REEMPLAZA: src="desierto-2.jpg" -->
+    <div class="gallery-item" data-col="desierto" onclick="openLightbox(7)">
+      <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&q=80" alt="Desierto II" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-info">
+          <span>Desierto II</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FUEGO 3 -->
+    <!-- REEMPLAZA: src="fuego-3.jpg" -->
+    <div class="gallery-item" data-col="fuego" onclick="openLightbox(8)">
+      <img src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?w=800&q=80" alt="Fuego III" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-info">
+          <span>Fuego III</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- AGUA 3 -->
+    <!-- REEMPLAZA: src="agua-3.jpg" -->
+    <div class="gallery-item" data-col="agua" onclick="openLightbox(9)">
+      <img src="https://images.unsplash.com/photo-1520209759809-a9bcb6cb3241?w=800&q=80" alt="Agua III" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-info">
+          <span>Agua III</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TIERRA 3 -->
+    <!-- REEMPLAZA: src="tierra-3.jpg" -->
+    <div class="gallery-item" data-col="tierra" onclick="openLightbox(10)">
+      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Tierra III" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-info">
+          <span>Tierra III</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- DESIERTO 3 -->
+    <!-- REEMPLAZA: src="desierto-3.jpg" -->
+    <div class="gallery-item" data-col="desierto" onclick="openLightbox(11)">
+      <img src="https://images.unsplash.com/photo-1502239608882-93b729c6af43?w=800&q=80" alt="Desierto III" loading="lazy">
+      <div class="gallery-item-overlay">
+        <div class="gallery-item-info">
+          <span>Desierto III</span>
         </div>
       </div>
     </div>
@@ -262,10 +467,39 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
   </div>
 </section>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-prev" onclick="moveLightbox(-1)">&#8592;</button>
+  <img class="lightbox-img" id="lightboxImg" src="" alt="">
+  <button class="lightbox-next" onclick="moveLightbox(1)">&#8594;</button>
+  <div class="lightbox-caption">
+    <span id="lightboxTitle"></span>
+  </div>
+</div>
+
+<!-- INSTAGRAM CTA -->
+<section style="background:var(--charcoal);padding:5rem 4rem;text-align:center" id="instagram">
+  <div class="fade-in" style="max-width:600px;margin:0 auto">
+    <span class="section-label" style="color:var(--gold-light)">Instagram</span>
+    <h2 style="font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--cream);line-height:1.1;margin-bottom:1.2rem">El proceso,<br>en <em style="color:var(--gold-light)">directo.</em></h2>
+    <div style="width:40px;height:0.5px;background:var(--gold);margin:1.8rem auto"></div>
+    <p style="font-size:0.88rem;line-height:1.9;color:rgba(245,242,236,0.65);margin-bottom:2.5rem">Texturas en primer plano, obras en proceso y el mundo que inspira cada pieza. Todo está en Instagram.</p>
+    <a href="https://instagram.com/iliyana.textured.art" target="_blank" style="display:inline-flex;align-items:center;gap:0.9rem;padding:1.1rem 3rem;border:0.5px solid var(--gold);color:var(--gold);font-family:var(--sans);font-size:0.75rem;letter-spacing:0.16em;text-transform:uppercase;text-decoration:none;transition:all 0.3s" onmouseover="this.style.background='var(--gold)';this.style.color='var(--charcoal)'" onmouseout="this.style.background='transparent';this.style.color='var(--gold)'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      @iliyana.textured.art
+    </a>
+  </div>
+
+  <div style="display:none" class="fade-in" id="instagram"><!-- placeholder -->
+
+</section>
+
+<!-- SOBRE MÍ -->
 <section class="about" id="sobre-mi">
   <div class="about-img-side">
-    <!-- REEMPLAZA: src="iliyana-estudio.jpg" — usa una foto tuya creando -->
-    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&q=80" alt="Iliyana creando en su estudio">
+    <!-- REEMPLAZA: src="iliyana-estudio.jpg" -->
+    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&q=80" alt="Iliyana creando">
     <div class="about-img-overlay"></div>
   </div>
   <div class="about-text-side fade-in">
@@ -276,7 +510,7 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
       <p>El arte ha estado conmigo toda la vida. Desde niña, crear fue mi forma natural de entender el mundo.</p>
       <p>Con los años, la vida me llevó por otros caminos: una carrera exigente, distintos países, responsabilidades, decisiones. Me convertí en mujer, en profesional, en madre. Y durante un tiempo, el arte quedó en silencio. No desapareció. Esperó.</p>
       <p>Volví a él durante mi segundo embarazo. Y fue aquí, en <strong>Jerez y Andalucía</strong>, donde esa vuelta tomó forma de verdad — donde encontré el equilibrio entre dos fuerzas que hoy atraviesan todo mi trabajo: el fuego y el agua.</p>
-      <p>Trabajo con materia y textura porque necesito tocar, construir, romper y volver a crear. <strong>Cada obra nace de una emoción vivida, de un momento real.</strong> No sigo reglas fijas: escucho el proceso y el espacio al que la obra está destinada.</p>
+      <p>Trabajo con materia y textura porque necesito tocar, construir, romper y volver a crear. <strong>Cada obra nace de una emoción vivida, de un momento real.</strong></p>
       <p>Hoy, crear es volver a casa.</p>
     </div>
     <div style="margin-top:2.5rem">
@@ -285,12 +519,13 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
   </div>
 </section>
 
+<!-- ENCARGOS -->
 <section class="commissions" id="encargos">
   <div class="commissions-inner fade-in">
     <span class="section-label">Encargos</span>
     <h2 class="section-heading">Una obra<br>hecha para ti</h2>
     <div class="divider"></div>
-    <p class="commissions-body">Puedes elegir una obra existente y adaptarla a tu espacio, o crear conmigo una pieza totalmente nueva, inspirada en mis colecciones y en lo que tú quieras sentir al vivir con ella. Cada encargo nace desde la conversación: el lugar donde irá, la luz, el tamaño, la energía que buscas.</p>
+    <p class="commissions-body">Puedes elegir una obra existente y adaptarla a tu espacio, o crear conmigo una pieza totalmente nueva, inspirada en mis colecciones y en lo que tú quieras sentir al vivir con ella. Cada encargo nace desde la conversación: el lugar donde irá, la luz, el tamaño, la energía que buscas. Trabajo en diferentes formatos — desde piezas pequeñas hasta obras de gran formato. Escríbeme y encontramos el tamaño que mejor se adapta a tu espacio.</p>
     <div class="commission-steps">
       <div class="step">
         <span class="step-num">01</span>
@@ -320,6 +555,7 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
   </div>
 </section>
 
+<!-- CONTACTO -->
 <section class="contact" id="contacto">
   <div class="contact-left fade-in">
     <span class="section-label">Contacto</span>
@@ -346,11 +582,10 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
   </div>
   <div class="contact-right fade-in">
     <!--
-      FORMULARIO DE CONTACTO
-      Para que funcione de verdad, usa Formspree (gratis):
-      1. Ve a formspree.io y crea una cuenta
-      2. Crea un nuevo formulario — te darán un action URL tipo: https://formspree.io/f/xxxxxxxx
-      3. Sustituye el action="" de abajo con ese URL
+      FORMULARIO: usa Formspree (gratis)
+      1. formspree.io → nueva cuenta → nuevo formulario
+      2. Copia tu action URL tipo https://formspree.io/f/xxxxxxxx
+      3. Pégala en action="" abajo
     -->
     <form class="contact-form" action="" method="POST">
       <div class="form-group">
@@ -386,6 +621,7 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
   <span class="footer-logo">Iliyana Art</span>
   <div class="footer-links">
     <a href="#colecciones">Colecciones</a>
+    <a href="#galeria">Galería</a>
     <a href="#sobre-mi">Sobre mí</a>
     <a href="#encargos">Encargos</a>
     <a href="https://instagram.com/iliyana.textured.art" target="_blank">Instagram</a>
@@ -394,11 +630,68 @@ footer{background:var(--charcoal);color:rgba(245,242,236,0.5);padding:3rem 4rem;
 </footer>
 
 <script>
+// Fade in on scroll
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') });
-}, { threshold: 0.15 });
+}, { threshold: 0.1 });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
 
+// Gallery data — mirrors the HTML above, update titles/sizes when you swap photos
+const galleryData = [
+  { src: 'https://images.unsplash.com/photo-1617791160536-598cf32026fb?w=1200&q=90', title: 'Fuego I' },
+  { src: 'https://images.unsplash.com/photo-1580136579312-94651dfd596d?w=1200&q=90', title: 'Agua I' },
+  { src: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1200&q=90', title: 'Tierra I' },
+  { src: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&q=90', title: 'Desierto I' },
+  { src: 'https://images.unsplash.com/photo-1547826039-bfc35e0f1ea8?w=1200&q=90', title: 'Fuego II' },
+  { src: 'https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200&q=90', title: 'Agua II' },
+  { src: 'https://images.unsplash.com/photo-1549490349-8643362247b5?w=1200&q=90', title: 'Tierra II' },
+  { src: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=1200&q=90', title: 'Desierto II' },
+  { src: 'https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?w=1200&q=90', title: 'Fuego III' },
+  { src: 'https://images.unsplash.com/photo-1520209759809-a9bcb6cb3241?w=1200&q=90', title: 'Agua III' },
+  { src: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=90', title: 'Tierra III' },
+  { src: 'https://images.unsplash.com/photo-1502239608882-93b729c6af43?w=1200&q=90', title: 'Desierto III' },
+];
+
+let currentIndex = 0;
+const visibleItems = () => [...document.querySelectorAll('#galleryGrid .gallery-item')].filter(el => el.style.display !== 'none');
+
+function openLightbox(index) {
+  currentIndex = index;
+  const d = galleryData[index];
+  document.getElementById('lightboxImg').src = d.src;
+  document.getElementById('lightboxTitle').textContent = d.title;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeLightboxOnBg(e) {
+  if (e.target === document.getElementById('lightbox')) closeLightbox();
+}
+function moveLightbox(dir) {
+  currentIndex = (currentIndex + dir + galleryData.length) % galleryData.length;
+  openLightbox(currentIndex);
+}
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLightbox();
+  if (e.key === 'ArrowRight') moveLightbox(1);
+  if (e.key === 'ArrowLeft') moveLightbox(-1);
+});
+
+// Gallery filter — default show Fuego on load
+window.addEventListener('DOMContentLoaded', () => {
+  filterGallery('fuego', document.querySelector('.filter-btn'));
+});
+function filterGallery(col, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#galleryGrid .gallery-item').forEach(item => {
+    item.style.display = item.dataset.col === col ? 'block' : 'none';
+  });
+}
+</script>
 </body>
 </html>
